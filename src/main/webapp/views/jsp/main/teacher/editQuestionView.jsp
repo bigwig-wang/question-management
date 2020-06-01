@@ -20,6 +20,7 @@
     <body>
     <jsp:include page="teacher-header.jsp"></jsp:include>
     <!-- 主要的内容模块 -->
+    <input type="hidden" value="${id}" id="questionId">
     <div id="ss-cont" class="ss-cont clearfix">
         <div class="overflowBarStyle" style="height: 662px; visibility: visible;">
             <!-- 内容显示 -->
@@ -172,7 +173,7 @@
 							<!--选择题-->
                             <div class="yd_box border_div"></div>
                             <div style="margin-top: 20px; margin-bottom: 30px; width: 80px;">
-                                <input class="btn btn-default btn-block btn-primary" style="margin-left: 450px;" id="submit" type="button" value="提交"/>
+                                <input class="btn btn-default btn-block btn-primary" style="margin-left: 450px;" id="update" type="button" value="修改"/>
                             </div>
                         </div>
                     </div>
@@ -314,11 +315,11 @@
     </div>
 
     <!-- Footer板块 -->
-    <%--<footer class="bg-light py-5">
+ <%--   <footer class="bg-light py-5">
         <div class="container"><div class="small text-center text-muted">——footer——</div></div>
     </footer>--%>
 
     <script src="static/js/jquery-1.8.0.min.js"></script>
-    <script src="static/js/question.js"></script>
+    <script src="static/js/editQuestion.js"></script>
     </body>
 </html>

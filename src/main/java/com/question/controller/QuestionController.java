@@ -7,6 +7,7 @@ import com.question.entity.Grade;
 import com.question.service.GradeService;
 import com.question.service.QuestionService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -48,7 +49,7 @@ public class QuestionController {
 
     @GetMapping("/edit-page")
     public ModelAndView editPage(ModelAndView modelAndView, Integer id) {
-        modelAndView.setViewName("main/teacher/doQuestionView");
+        modelAndView.setViewName("main/teacher/editQuestionView");
         modelAndView.addObject("id", id);
         return modelAndView;
     }

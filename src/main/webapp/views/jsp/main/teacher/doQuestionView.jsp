@@ -15,6 +15,7 @@
     <title>create questionnaire</title>
     <link href="static/css/create.css" rel="stylesheet" type="text/css"/>
     <link href="static/css/wenjuan.css" rel="stylesheet" type="text/css"/>
+    <link href="static/css/styles-new.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="header-pic" id="header-pic"><img src="static/image/title.png" width=100% height=100%/></div>
@@ -32,8 +33,8 @@
                     <div class="content_question_answer">
                         <!--选择题-->
                         <div class="yd_box border_div"></div>
-                        <div style="clear: both">
-                            <input id="answer" type="button" value="提交"/>
+                        <div style="margin-top: 20px; margin-bottom: 30px; width: 80px;">
+                            <input class="btn btn-default btn-block btn-primary" style="margin-left: 450px;" id="answer" type="button" value="提交"/>
                         </div>
                     </div>
                 </div>

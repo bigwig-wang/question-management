@@ -1,11 +1,26 @@
 $(function () {
 
+    $.ajax({
+        type: "GET",
+        url: "question/edit?id="+$("#questionId").val(),
+        contentType: "application/json",
+        dataType: "json",
+        success: function(data){
+            if(data){
+                var items = data.questionItems;
+                items.forEach(function (element) {
+                    renderItem(element);
+                })
+            }
+        }
+    });
+
     $(".delete_button").click(function () {
         this.parentNode.parentNode.parentNode.remove();
     });
 
     /*提交*/
-    $('#submit').click(function(){
+    $('#update').click(function(){
         var boxs = $(".movie_box");
         var boxLength = $(".movie_box").length
         if(boxLength < 1 ){
@@ -28,13 +43,14 @@ $(function () {
             requestBody.push(data);
         });
         var requestData = {};
+        requestData.id = $("#questionId").val();
         requestData.title = "考试数据"
         requestData.questionItems = requestBody;
         var requestString = JSON.stringify(requestData);
 
         $.ajax({
             type: "POST",
-            url: "/question/save",
+            url: "/question/publish",
             contentType: "application/json",
             dataType: "json",
             data: requestString,
@@ -434,52 +450,81 @@ $(function () {
 
 });
 
+function renderItem(question){
 
+    var index = question.type
+    var movie_box = '<div class="movie_box" boxType="'+index+'" style="border: 1px solid rgb(255, 255, 255);"></div>';
+    var Grade = $(".yd_box").find(".movie_box").length + 1;
+    switch (index) {
+        case "0": //单选
+        case "4": //判断
+        case "1": //多选
+        case "6": //问答
+        case "5": //问答
+        case "2": //问答
+            var wjdc_list = '<ul class="wjdc_list"></ul>'; //问答 单选 多选
+            var danxuan = "";
+            if (index == "0") {
+                danxuan = '【单选】';
+            } else if (index == "1") {
+                danxuan = '【多选】';
+            } else if (index == "2") {
+                danxuan = '【问答题】';
+            } else if (index == "4") {
+                danxuan = "【判断题】";
+            } else if (index == '5') {
+                danxuan = "【填空题】";
+            } else if (index == '6') {
+                danxuan = "【编程】";
+            }
 
-function createItem(question) {
-    if(!question){
-        return
+            wjdc_list = $(wjdc_list).append(' <li><div class="tm_btitlt"><i class="nmb">' + Grade + '</i>. <i class="btwenzi">'+question.title+'</i><span class="tip_wz">' + danxuan + '</span></div></li>');
+
+            if (index == "2" || index == "5" || index == "6") {
+                wjdc_list = $(wjdc_list).append('<li>  <label> <textarea name="" cols="" rows="" class="input_wenbk btwen_text btwen_text_dx" ></textarea></label> </li>');
+            }else if (index == "0" || index == "4"){
+
+                if (question.options){
+                    var items = JSON.parse(question.options);
+                    for(var key in items){
+                        var itemHtml = '<li><label><input name="a" type="radio" value="'+items[key]+'"><span>'+key+'</span></label></li>'
+                        wjdc_list = $(wjdc_list).append(itemHtml);
+                    }
+                }
+            }else {
+                if (question.options){
+                    var items = JSON.parse(question.options);
+                    for(var key in items){
+                        var itemHtml = '<li><label><input name="a" type="checkbox" value="'+items[key]+'"><span>'+key+'</span></label></li>'
+                        wjdc_list = $(wjdc_list).append(itemHtml);
+                    }
+                }
+            }
+            movie_box = $(movie_box).append(wjdc_list);
+            movie_box = $(movie_box).append('<div class="dx_box" data-t="' + index + '"></div>');
+
+            break;
+        case "3":
+            var wjdc_list = ' <div class="wjdc_list"><h4 class="title_wjht"><i class="nmb">' + Grade + '</i>. 请编辑问题!<span class="tip_wz">【矩阵】</span></h4>'
+                + ' <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tswjdc_table"><tbody></tbody></table></div>'; //问答 单选 多选
+            movie_box = $(movie_box).append(wjdc_list);
+            movie_box = $(movie_box).append('<div class="dx_box" data-t="' + index + '"></div>');
+            break;
     }
-    var box = $('.yd_box')
-    var type =  question.type;
-    var mov_blank = $('.xxk_box').children('.xxk_conn');
-    //单选和判断
-    if(type == 0 || type ==4){
-        var radioHtml = $(mov_blank).children('.radio');
-        $(radioHtml).find('.btwenzi').text(question.title);
-        if(type == 0){
-            $(radioHtml).find('.tip_wz').text('【单选题】');
-        }else{
-            $(radioHtml).find('.tip_wz').text('【判断题】');
-        }
-        $(box).append($(radioHtml));
-        var items = JSON.parse(question.options);
-        for(var key in items){
-            var itemHtml = '<li><label><input name="a" type="radio" value="'+items[key]+'"><span>'+key+'</span></label></li>'
-            $(box).find(radioHtml).find('.wjdc_list').append(itemHtml);
-        }
-    }else if (type == 1){
-        var radioHtml = $(mov_blank).children('.multiple');
-        $(radioHtml).find('.btwenzi').text(question.title);
-        $(radioHtml).find('.tip_wz').text('【多选题】');
-        $(box).append($(radioHtml));
-        var items = JSON.parse(question.options);
-        for(var key in items){
-            var itemHtml = '<li><label><input name="a" type="radio" value="'+items[key]+'"><span>'+key+'</span></label></li>'
-            $(box).find(radioHtml).find('.wjdc_list').append(itemHtml);
-        }
-    }else if (type == 2 || type == 5 || type ==6){
-        var radioHtml = $(mov_blank).children('.answer');
-        $(radioHtml).find('.btwenzi').text(question.title);
-        if(type == 2){
-            $(radioHtml).find('.tip_wz').text('【问答题】');
-        }else if(type == 5){
-            $(radioHtml).find('.tip_wz').text('【填空题】');
-        }else{
-            $(radioHtml).find('.tip_wz').text('【编程题】');
-        }
-        $(box).append($(radioHtml).html())
 
+    $(movie_box).hover(function() {
+        var html_cz = "<div class='kzqy_czbut'><a href='javascript:void(0)' class='sy'>上移</a><a href='javascript:void(0)'  class='xy'>下移</a><a href='javascript:void(0)'  class='bianji'>编辑</a><a href='javascript:void(0)' class='del' >删除</a></div>"
+        $(this).css({
+            "border": "1px solid #0099ff"
+        });
+        $(this).children(".wjdc_list").after(html_cz);
+    }, function() {
+        $(this).css({
+            "border": "1px solid #fff"
+        });
+        $(this).children(".kzqy_czbut").remove();
+        //$(this).children(".dx_box").hide();
+    });
+    $(".yd_box").append(movie_box);
 
-    }
 }
