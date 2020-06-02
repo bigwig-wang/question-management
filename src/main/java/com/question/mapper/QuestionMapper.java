@@ -23,6 +23,14 @@ public interface QuestionMapper {
     @Select("select * from question where id = #{id}")
     Question findOne(Integer id);
 
+    @Select({"<script> ",
+            "select * from question where gradeId in ",
+            "<foreach item='id' index='index' collection='gradeIds' open='(' separator=',' close=')'>",
+            "#{id}",
+            "</foreach>",
+            "</script>"})
+    List<Question> findByGradeIn(@Param("gradeIds") List<Integer> gradeIds);
+
     @Select("select * from question where teacherId = #{teacherId}")
     List<Question> list(Integer teacherId);
 

@@ -87,10 +87,6 @@
             <div class="dx_box" data-t="6" style="display: none;"></div>
         </div>
     </div>
-    <!-- Footer板块 -->
-    <div class="container">
-        <div class="small text-center text-muted">——footer——</div>
-    </div>
 
 </div>
 <script src="static/js/jquery-1.8.0.min.js"></script>

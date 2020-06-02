@@ -102,9 +102,7 @@ public class UserService {
 
     public List<User> list() {
         return userMapper.list().stream().map(user -> {
-            String gradeName = userGradeMapper.findByUserId(user.getId()).stream().map(userGrade -> {
-                return gradeMapper.find(userGrade.getGradeId());
-            }).map(Grade::getName).collect(Collectors.joining(","));
+            String gradeName = userGradeMapper.findByUserId(user.getId()).stream().map(userGrade -> gradeMapper.find(userGrade.getGradeId())).map(Grade::getName).collect(Collectors.joining(","));
             user.setGradeName(gradeName);
             return user;
         }).collect(Collectors.toList());

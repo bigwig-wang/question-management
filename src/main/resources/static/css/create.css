@@ -10,8 +10,7 @@ body {
 .ss-cont {
     margin: 0 auto;
     text-align: left;
-    width: 60%;
-    width: 60%;
+    width:80%;
     position: relative;
 }
 .clearfix {
@@ -700,15 +699,13 @@ button, input, optgroup, option, select, textarea {
 
 .personal_information_name  {
     position: relative;
-    width: 40%;
     height: 70px;
 }
 
 .personal_base_information {
     position: relative;
-    width: 40%;
+    /*width: 40%;*/
     margin-top: 20px;
-    height: 280px;
 }
 
 .border_div{

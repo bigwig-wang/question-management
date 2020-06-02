@@ -84,12 +84,12 @@
 
 <jsp:include page="../footer.jsp"></jsp:include>
 <script>
-  function edit(id) {
+  function detail(id) {
     //跳到对应的controller处理信息
     window.location.href = "question/edit?id=" + id;
   }
 
-  function detail(id) {
+  function edit(id) {
     window.location.href = "/question/edit-page?id="+id;
   }
 

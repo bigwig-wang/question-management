@@ -31,7 +31,6 @@ public class User {
 
     private String role;
 
-
     private String newPassword;
 
     private String repeatPassword;

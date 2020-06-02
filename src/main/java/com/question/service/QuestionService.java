@@ -6,8 +6,11 @@ import com.question.dto.QuestionDto;
 import com.question.dto.ResponseInfo;
 import com.question.entity.Question;
 import com.question.entity.QuestionItem;
+import com.question.entity.User;
+import com.question.entity.UserGrade;
 import com.question.mapper.QuestionItemMapper;
 import com.question.mapper.QuestionMapper;
+import com.question.mapper.UserGradeMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,7 @@ public class QuestionService {
     private final QuestionItemMapper questionItemMapper;
     private final QuestionMapper questionMapper;
     private final SessionService sessionService;
+    private final UserGradeMapper userGradeMapper;
 
     public ResponseInfo add(QuestionDto questionDto) {
 
@@ -70,6 +74,21 @@ public class QuestionService {
                 .build();
     }
 
+    public List<QuestionDto> getDetailWithUserId() {
+        List<Integer> gradeIds = userGradeMapper.findByUserId(sessionService.getCurrentUserId())
+                .stream().map(UserGrade::getGradeId).collect(Collectors.toList());
+
+        return questionMapper.findByGradeIn(gradeIds).stream().map(question -> QuestionDto.builder()
+                .id(question.getId())
+                .title(question.getTitle())
+                .status(question.getStatus())
+                .gradeName(question.getGradeName())
+                .gradeId(question.getGradeId())
+                .teacherId(question.getTeacherId())
+                .teacherName(question.getTeacherName())
+                .build()).collect(Collectors.toList());
+    }
+
     public List<QuestionDto> list() {
         Integer currentUserId = sessionService.getCurrentUserId();
         List<Question> questions = questionMapper.list(currentUserId);
@@ -83,4 +102,5 @@ public class QuestionService {
                 .teacherName(question.getTeacherName())
                 .build()).collect(Collectors.toList());
     }
+
 }

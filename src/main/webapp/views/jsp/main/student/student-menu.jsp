@@ -17,19 +17,9 @@
     </div>
     <div class="nav">
         <div class="nav-li">
-            <div class="title">QUESTIONNAIRE</div>
-            <ul>
-                <li><a class="navbar-brand js-scroll-trigger" href="per-student-ques.html">RECEIVED</a></li>
-                <li><a class="navbar-brand js-scroll-trigger" href="per-student-ques2.html">MY QUESTIONNAIRE</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="nav">
-        <div class="nav-li">
             <div class="title">TEST</div>
             <ul>
-                <li><a class="navbar-brand js-scroll-trigger" href="views/jsp/main/teacher/doQuestionView.jsp">RECEIVED</a></li>
-                <%--<li><a class="navbar-brand js-scroll-trigger" href="per-student-test2.html">COLLECTION</a></li>--%>
+                <li><a class="navbar-brand js-scroll-trigger" href="answer/list">MY TEST</a></li>
             </ul>
         </div>
     </div>

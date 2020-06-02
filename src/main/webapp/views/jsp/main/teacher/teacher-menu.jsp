@@ -17,21 +17,10 @@
     </div>
     <div class="nav">
         <div class="nav-li">
-            <div class="title">QUESTIONNAIRE</div>
-            <ul>
-                <li><a class="navbar-brand js-scroll-trigger" href="question/list">RECEIVED</a></li>
-                <li><a class="navbar-brand js-scroll-trigger" href="views/jsp/main/teacher/addQuestionView.jsp">ADD QUESTION</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="nav">
-        <div class="nav-li">
             <div class="title">TEST</div>
             <ul>
-                <li><a class="navbar-brand js-scroll-trigger" href="per-teacher-test1.html">NEW TEST</a></li>
-                <li><a class="navbar-brand js-scroll-trigger" href="per-teacher-test2.html">MY TEST</a></li>
-                <li><a class="navbar-brand js-scroll-trigger" href="per-teacher-test3.html">MARK</a></li>
-                <li><a class="navbar-brand js-scroll-trigger" href="per-teacher-test4.html">STATISTIC</a></li>
+                <li><a class="navbar-brand js-scroll-trigger" href="question/list">QUESTION LIST</a></li>
+                <li><a class="navbar-brand js-scroll-trigger" href="views/jsp/main/teacher/addQuestionView.jsp">ADD QUESTION</a></li>
             </ul>
         </div>
     </div>
