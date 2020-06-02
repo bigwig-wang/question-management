@@ -28,8 +28,8 @@
         <div class="nav-li">
             <div class="title">TEST</div>
             <ul>
-                <li><a class="navbar-brand js-scroll-trigger" href="per-student-test1.html">RECEIVED</a></li>
-                <li><a class="navbar-brand js-scroll-trigger" href="per-student-test2.html">COLLECTION</a></li>
+                <li><a class="navbar-brand js-scroll-trigger" href="views/jsp/main/teacher/doQuestionView.jsp">RECEIVED</a></li>
+                <%--<li><a class="navbar-brand js-scroll-trigger" href="per-student-test2.html">COLLECTION</a></li>--%>
             </ul>
         </div>
     </div>

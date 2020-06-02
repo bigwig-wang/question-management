@@ -1,7 +1,8 @@
 $(function () {
 
     $(".delete_button").click(function () {
-        this.parentNode.parentNode.parentNode.remove();
+        var divclass = $(this).attr('divclass');
+        $(this).parents('.'+divclass).remove();
     });
 
     /*提交*/
@@ -212,7 +213,7 @@ $(function () {
             //赋值文本框
             //题目标题
             var texte_bt_val = $(this).parent(".kzqy_czbut").parent(".movie_box").find(".wjdc_list").children("li").eq(0).find(".tm_btitlt").children(".btwenzi").text();
-            dx_rq.find(".btwen_text").val(texte_bt_val);
+            dx_rq.find(".btwen_text").attr('placeholder', texte_bt_val);
             //遍历题目项目的文字
             var bjjs = 0;
             $(this).parent(".kzqy_czbut").parent(".movie_box").find(".wjdc_list").children("li").each(function() {
@@ -224,7 +225,7 @@ $(function () {
                 }
                 //题目选项
                 var texte_val = $(this).find("span").text();
-                dx_rq.find(".title_itram").children(".kzjxx_iteam").eq(bjjs - 1).find(".input_wenbk").val(texte_val);
+                dx_rq.find(".title_itram").children(".kzjxx_iteam").eq(bjjs - 1).find(".input_wenbk").attr('placeholder', texte_val);
                 bjjs++
 
             });
@@ -243,7 +244,7 @@ $(function () {
             //赋值文本框
             //题目标题
             var texte_bt_val = $(this).parent(".kzqy_czbut").parent(".movie_box").find(".wjdc_list").children("li").eq(0).find(".tm_btitlt").children(".btwenzi").text();
-            dx_rq.find(".btwen_text").val(texte_bt_val);
+            dx_rq.find(".btwen_text").attr('placeholder', texte_bt_val);
             //遍历题目项目的文字
             var bjjs = 0;
             $(this).parent(".kzqy_czbut").parent(".movie_box").find(".wjdc_list").children("li").each(function() {
@@ -255,7 +256,7 @@ $(function () {
                 }
                 //题目选项
                 var texte_val = $(this).find("span").text();
-                dx_rq.find(".title_itram").children(".kzjxx_iteam").eq(bjjs - 1).find(".input_wenbk").val(texte_val);
+                dx_rq.find(".title_itram").children(".kzjxx_iteam").eq(bjjs - 1).find(".input_wenbk").attr('placeholder', texte_val);
                 bjjs++
 
             });
@@ -266,7 +267,7 @@ $(function () {
             //赋值文本框
             //题目标题
             var texte_bt_val = $(this).parent(".kzqy_czbut").parent(".movie_box").find(".wjdc_list").children("li").eq(0).find(".tm_btitlt").children(".btwenzi").text();
-            dx_rq.find(".btwen_text").val(texte_bt_val);
+            dx_rq.find(".btwen_text").attr('placeholder', texte_val);
         }
         //矩阵题目
         if(title == 3) {
@@ -285,7 +286,7 @@ $(function () {
             //赋值文本框
             //题目标题
             var texte_bt_val = $(this).parent(".kzqy_czbut").parent(".movie_box").find(".wjdc_list").children("li").eq(0).find(".tm_btitlt").children(".btwenzi").text();
-            dx_rq.find(".btwen_text").val(texte_bt_val);
+            dx_rq.find(".btwen_text").attr('placeholder', texte_bt_val);
             //遍历题目项目的文字
             var bjjs = 0;
             $(this).parent(".kzqy_czbut").parent(".movie_box").find(".wjdc_list").children("li").each(function() {
@@ -297,7 +298,7 @@ $(function () {
                 }
                 //题目选项
                 var texte_val = $(this).find("span").text();
-                dx_rq.find(".title_itram").children(".kzjxx_iteam").eq(bjjs - 1).find(".input_wenbk").val(texte_val);
+                dx_rq.find(".title_itram").children(".kzjxx_iteam").eq(bjjs - 1).find(".input_wenbk").attr('placeholder', texte_val);
                 bjjs++
 
             });
@@ -434,8 +435,6 @@ $(function () {
 
 });
 
-
-
 function createItem(question) {
     if(!question){
         return
@@ -481,5 +480,20 @@ function createItem(question) {
         $(box).append($(radioHtml).html())
 
 
+    }
+}
+
+function createFreQ(informationType){
+    var informationParent = $('.title-information');
+    var headInformation = $('.head-information');
+    if(informationType === 'name'){
+        if($(headInformation).find('.personal_information_name').length < 1){
+            $(headInformation).prepend($(informationParent).find('.personal_information_name'));
+        }
+
+    }else if(informationType === 'basic-information'){
+        if($(headInformation).find('.personal_base_information').length < 1){
+            $(headInformation).append($(informationParent).find('.personal_base_information'));
+        }
     }
 }

@@ -5,12 +5,13 @@ body {
     overflow-x: hidden;
 }
 #ss-cont {
-    width: 1023px;
+    /*width: 1023px;*/
 }
 .ss-cont {
     margin: 0 auto;
     text-align: left;
-    width: 1138px;
+    width: 60%;
+    width: 60%;
     position: relative;
 }
 .clearfix {
@@ -666,7 +667,7 @@ button, input, optgroup, option, select, textarea {
     position: absolute;
     float: left;
     padding: 10px 0 40px;
-    width: 260px;
+    width: 20%;
     background: #fff;
     box-shadow: 0px 0px 4px 0px #dfdfdf;
     float: left;
@@ -685,7 +686,7 @@ button, input, optgroup, option, select, textarea {
 }
 .content_question {
     position: absolute;
-    width: 100%;
+    width: 80%;
     height: 100%;
     float: right;
     margin-left:300px;

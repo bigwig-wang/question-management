@@ -199,7 +199,7 @@
                 <div class="title_itram">
                     <div class="kzjxx_iteam">
                         <input name="" type="radio" value="" class="dxk">
-                        <input name="options" type="text" class="input_wenbk" value="" placeholder="选项">
+                        <input name="options" type="text" class="input_wenbk" placeholder="选项">
                         <label>
                             <input name="" type="checkbox" value="" class="fxk"> <span>可填空</span>
                         </label> <a href="javascript:void(0);" class="del_xm">删除</a>
@@ -218,14 +218,14 @@
                 <div class="title_itram">
                     <div class="kzjxx_iteam">
                         <input name="" type="radio" value="0" class="dxk">
-                        <input name="options" type="text" class="input_wenbk" value="" placeholder="【判断题】">
+                        <input name="options" type="text" class="input_wenbk" placeholder="【判断题】">
                         <label>
                             <input name="" type="checkbox" value="" class="fxk"> <span>可填空</span>
                         </label> <a href="javascript:void(0);" class="del_xm">删除</a>
                     </div>
                     <div class="kzjxx_iteam">
                         <input name="" type="radio" value="" class="dxk">
-                        <input name="options" type="text" class="input_wenbk" value="" placeholder="【判断题】">
+                        <input name="options" type="text" class="input_wenbk" placeholder="【判断题】">
                         <label>
                             <input name="" type="checkbox" value="1" class="fxk"> <span>可填空</span>
                         </label>
@@ -243,7 +243,7 @@
                 <div class="title_itram">
                     <div class="kzjxx_iteam">
                         <input name="" type="checkbox" value="" class="dxk">
-                        <input name="options" type="text" class="input_wenbk" value="选项" placeholder="选项">
+                        <input name="options" type="text" class="input_wenbk" placeholder="选项">
                         <label>
                             <input name="" type="checkbox" value="" class="fxk"> <span>可填空</span></label>
                         <a href="javascript:void(0);" class="del_xm">删除</a>

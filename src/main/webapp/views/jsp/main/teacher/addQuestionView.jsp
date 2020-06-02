@@ -124,49 +124,7 @@
                         </div>
                         <!--内容主体-->
                         <div class="content_question">
-                            <div class="border_div">
-                                <div class="personal_information_name border_div">
-                                    <div class="title_top">
-                                        <span class="title_top">title</span><!--读取第一题的题目填入-->
-                                        <span class="req">*</span>
-                                    </div>
-                                    <input name="questionTile"/>
-                                    <span class="operation">
-                                        <li>
-                                            <span class="design-icon design-edit"></span>
-                                            <button class="delete_button">Delete</button>
-                                        </li>
-                                    </span>
-                                </div>
-                                <div class="personal_base_information border_div info_div">
-                                    <div class="title_top">
-                                        <span >Essential Information:</span><!--基本信息-->
-                                        <span class="req">*</span>
-                                    </div>
-                                    <ul>
-                                        <li class="border_div">
-                                            <span class="tile_left">Name:</span><!--读取第一题的题目填入-->
-                                            <span class="req">*</span>
-                                            <input name="name"/>
-                                        </li>
-                                        <li class="border_div">
-                                            <span class="tile_left">ID:</span><!--读取第一题的题目填入-->
-                                            <span class="req">*</span>
-                                            <input name="id"/>
-                                        </li>
-                                        <li class="border_div">
-                                            <span class="tile_left">Class:</span><!--读取第一题的题目填入-->
-                                            <span class="req">*</span>
-                                            <input name="class"/>
-                                        </li>
-                                    </ul>
-                                    <span class="operation">
-                                        <li>
-                                            <span class="design-icon design-edit"></span>
-                                            <button class="delete_button">Delete</button>
-                                        </li>
-                                    </span>
-                                </div>
+                            <div class="head-information border_div">
                             </div>
 
 							<!--选择题-->
@@ -183,6 +141,53 @@
 
             <div class="container-fluid">
             </div>
+        </div>
+    </div>
+
+
+    <div class="title-information hide">
+        <div class="personal_information_name border_div">
+            <div class="title_top">
+                <span class="title_top">title</span><!--读取第一题的题目填入-->
+                <span class="req">*</span>
+            </div>
+            <input name="questionTile"/>
+            <span class="operation">
+                <li>
+                    <span class="design-icon design-edit"></span>
+                    <button class="delete_button" divclass = "personal_information_name">Delete</button>
+                </li>
+            </span>
+        </div>
+
+        <div class="personal_base_information border_div info_div">
+            <div class="title_top">
+                <span >Essential Information:</span><!--基本信息-->
+                <span class="req">*</span>
+            </div>
+            <ul>
+                <li class="border_div">
+                    <span class="tile_left">Name:</span><!--读取第一题的题目填入-->
+                    <span class="req">*</span>
+                    <input name="name"/>
+                </li>
+                <li class="border_div">
+                    <span class="tile_left">ID:</span><!--读取第一题的题目填入-->
+                    <span class="req">*</span>
+                    <input name="id"/>
+                </li>
+                <li class="border_div">
+                    <span class="tile_left">Class:</span><!--读取第一题的题目填入-->
+                    <span class="req">*</span>
+                    <input name="class"/>
+                </li>
+            </ul>
+            <span class="operation">
+                <li>
+                    <span class="design-icon design-edit"></span>
+                    <button class="delete_button" divclass = "personal_base_information">Delete</button>
+                </li>
+            </span>
         </div>
     </div>
 
@@ -242,7 +247,7 @@
                 <div class="title_itram">
                     <div class="kzjxx_iteam">
                         <input name="" type="checkbox" value="" class="dxk">
-                        <input name="options" type="text" class="input_wenbk" value="选项" placeholder="选项">
+                        <input name="options" type="text" class="input_wenbk" placeholder="选项">
                         <label>
                             <input name="" type="checkbox" value="" class="fxk"> <span>可填空</span></label>
                         <a href="javascript:void(0);" class="del_xm">删除</a>
