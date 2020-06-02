@@ -15,8 +15,8 @@ $(function () {
         }
     });
 
-    $(".delete_button").click(function () {
-        this.parentNode.parentNode.parentNode.remove();
+    $(".delete_button").live('click',function () {
+        $(this).parents(".delete_div").remove();
     });
 
     /*提交*/
@@ -527,4 +527,19 @@ function renderItem(question){
     });
     $(".yd_box").append(movie_box);
 
+}
+
+function createFreQ(informationType){
+    var informationParent = $('.title-information');
+    var headInformation = $('.head-information');
+    if(informationType === 'name'){
+        if($(headInformation).find('.personal_information_name').length < 1){
+            $(headInformation).prepend($(informationParent).find('.personal_information_name').clone());
+        }
+
+    }else if(informationType === 'basic-information'){
+        if($(headInformation).find('.personal_base_information').length < 1){
+            $(headInformation).append($(informationParent).find('.personal_base_information').clone());
+        }
+    }
 }

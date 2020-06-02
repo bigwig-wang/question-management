@@ -126,7 +126,7 @@
                     </div>
                     <!--内容主体-->
                     <div class="content_question">
-                        <div class="head-information border_div">
+                        <div class="head-information">
                         </div>
 
                         <!--选择题-->
@@ -148,64 +148,7 @@
 </div>
 
 
-<div class="title-information hide">
-    <div class="personal_information_name border_div">
-        <div class="form-group" style="margin-top: 20px;">
-            <table style="width: 100%">
-            <tr>
-                <td style="width: 60px"><label>TITLE</label></td>
-                <td style="width: 600px;">
-                    <div >
-                        <input type="text" class="form-control" name="username"/>
-                    </div>
-                </td>
-                <td style="padding-left: 80px">
-                    <button style="height:40px; width: 80px; color: #fff; background-color: #f4623a; border-color: #f4623a;">Delete</button>
-                </td>
-            </tr>
-            </table>
-        </div>
 
-    </div>
-
-    <div class="personal_base_information border_div info_div">
-        <div class="title_top">
-            <span>Essential Information:</span><!--基本信息-->
-            <span class="req">*</span>
-        </div>
-            <table style="width: 100%">
-                <tr>
-                    <td style="width:60px"><label>NAME</label></td>
-                    <td style="width: 600px;">
-                        <div >
-                            <input type="text" class="form-control" name="username"/>
-                        </div>
-                    </td>
-
-                </tr>
-                <tr style="margin-top: 20px">
-                    <td style="width: 48px"><label>ID</label></td>
-                    <td style="width: 600px;">
-                        <div >
-                            <input type="text" class="form-control" name="username"/>
-                        </div>
-                    </td>
-
-                </tr>
-                <tr style="margin-top: 20px">
-                    <td style="width: 48px"><label>CLASS</label></td>
-                    <td style="width: 600px;">
-                        <div >
-                            <input type="text" class="form-control" name="username"/>
-                        </div>
-                    </td>
-                    <td style="padding-left: 80px">
-                        <button style="height:40px; width: 80px; color: #fff; background-color: #f4623a; border-color: #f4623a;">Delete</button>
-                    </td>
-                </tr>
-            </table>
-    </div>
-</div>
 
 
 <!--选项卡区域  模板区域---------------------------------------------------------------------------------------------------------------------------------------->
@@ -352,6 +295,65 @@
 <%--<footer class="bg-light py-5">
     <div class="container"><div class="small text-center text-muted">——footer——</div></div>
 </footer>--%>
+
+<div class="title-information hide">
+    <div class="personal_information_name delete_div border_div">
+        <div class="form-group" style="margin-top: 20px;">
+            <table style="width: 100%">
+                <tr>
+                    <td style="width: 60px"><label>TITLE</label></td>
+                    <td style="width: 600px;">
+                        <div >
+                            <input type="text" class="form-control" name="username"/>
+                        </div>
+                    </td>
+                    <td style="padding-left: 80px">
+                        <button class="delete_button" style="height:40px; width: 80px; color: #fff; background-color: #f4623a; border-color: #f4623a;">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="personal_base_information delete_div border_div info_div">
+        <div class="title_top">
+            <span>Essential Information:</span><!--基本信息-->
+            <span class="req">*</span>
+        </div>
+        <table style="width: 100%">
+            <tr>
+                <td style="width:60px"><label>NAME</label></td>
+                <td style="width: 600px;">
+                    <div >
+                        <input type="text" class="form-control" name="username"/>
+                    </div>
+                </td>
+
+            </tr>
+            <tr style="margin-top: 20px">
+                <td style="width: 48px"><label>ID</label></td>
+                <td style="width: 600px;">
+                    <div >
+                        <input type="text" class="form-control" name="username"/>
+                    </div>
+                </td>
+
+            </tr>
+            <tr style="margin-top: 20px">
+                <td style="width: 48px"><label>CLASS</label></td>
+                <td style="width: 600px;">
+                    <div >
+                        <input type="text" class="form-control" name="username"/>
+                    </div>
+                </td>
+                <td style="padding-left: 80px">
+                    <button class="delete_button" style="height:40px; width: 80px; color: #fff; background-color: #f4623a; border-color: #f4623a;">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
 
 <script src="static/js/jquery-1.8.0.min.js"></script>
 <script src="static/js/question.js"></script>
