@@ -59,7 +59,9 @@ function createItem(question) {
     if(!question){
         return
     }
+
     var box = $('.yd_box')
+    var count = $('.yd_box').find('.movie_box').length;
     var type =  question.type;
     var mov_blank = $('.xxk_box').children('.xxk_conn');
     //单选和判断
@@ -101,4 +103,5 @@ function createItem(question) {
         $(box).append($(radioHtml).html())
     }
     $(radioHtml).attr('data-id', question.id);
+    $(box).find(radioHtml).find('.wjdc_list').find('.nmb').html(count+1);
 }

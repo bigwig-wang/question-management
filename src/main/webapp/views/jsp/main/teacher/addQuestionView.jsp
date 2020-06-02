@@ -326,7 +326,7 @@
                 <td style="width:60px"><label>NAME</label></td>
                 <td style="width: 600px;">
                     <div >
-                        <input type="text" class="form-control" name="username"/>
+                        <input type="text" class="information-title form-control" name="username"/>
                     </div>
                 </td>
 

@@ -11,6 +11,7 @@ $(function () {
         if(boxLength < 1 ){
             return;
         }
+        var title = $('.head-information').find('information-title').value();
         var requestBody = [];
         boxs.each(function () {
             var data = {};
@@ -28,7 +29,7 @@ $(function () {
             requestBody.push(data);
         });
         var requestData = {};
-        requestData.title = "考试数据"
+        requestData.title = title
         requestData.questionItems = requestBody;
         var requestString = JSON.stringify(requestData);
 
